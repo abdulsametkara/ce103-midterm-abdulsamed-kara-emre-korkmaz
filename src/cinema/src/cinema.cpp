@@ -1,4 +1,4 @@
-#include "../header/calculator.h"
+#include "../header/cinema.h"
 #include <stdexcept>
 
 using namespace Coruh::Calculator;

@@ -54,7 +54,7 @@ pip install mkdocs \
             mkdocs-include-markdown-plugin \
             mkdocs-ezlinks-plugin \
             mkdocs-git-authors-plugin \
-            mkdocs-git-committers-plugin \
+            mkdocs-git-Cinematers-plugin \
             mkdocs-exclude \
             pptx2md \
 		    junit2html

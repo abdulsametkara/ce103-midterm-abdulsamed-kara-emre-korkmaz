@@ -1,6 +1,6 @@
 #!/bin/bash
 # Installation:
-#   Copy this script as pre-commit to .git/hooks folder
+#   Copy this script as pre-Cinema to .git/hooks folder
 
 OPTIONS="--options=astyle-options.txt"
 

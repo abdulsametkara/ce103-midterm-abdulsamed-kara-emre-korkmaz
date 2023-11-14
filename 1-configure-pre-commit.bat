@@ -10,14 +10,14 @@ if not exist "%HOOKS_DIR%" (
     exit /b 1
 )
 
-REM Backup current pre-commit script if it exists
-if exist "%HOOKS_DIR%\pre-commit" (
-    echo Backing up current pre-commit script...
-    rename "%HOOKS_DIR%\pre-commit" "pre-commit.backup"
+REM Backup current pre-Cinema script if it exists
+if exist "%HOOKS_DIR%\pre-Cinema" (
+    echo Backing up current pre-Cinema script...
+    rename "%HOOKS_DIR%\pre-Cinema" "pre-Cinema.backup"
 )
 
-REM Copy 1-pre-commit to .git/hooks directory and rename it to pre-commit
-copy "1-pre-commit" "%HOOKS_DIR%\pre-commit"
+REM Copy 1-pre-Cinema to .git/hooks directory and rename it to pre-Cinema
+copy "1-pre-Cinema" "%HOOKS_DIR%\pre-Cinema"
 
 echo Script has been copied successfully.
 

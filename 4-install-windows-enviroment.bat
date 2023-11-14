@@ -123,7 +123,7 @@ pip install mkdocs-embed-external-markdown
 pip install mkdocs-include-markdown-plugin
 pip install mkdocs-ezlinks-plugin
 pip install mkdocs-git-authors-plugin
-pip install mkdocs-git-committers-plugin
+pip install mkdocs-git-Cinematers-plugin
 pip install mkdocs-exclude
 
 pip install pptx2md

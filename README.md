@@ -16,7 +16,7 @@ This project provides a suite of modules aimed to show how Cmake used with Ctest
 
 ### Step-1 (Run on Windows, Can Effect on WSL)
 
-Run 1-configure-pre-commit.bat file to copy 1-pre-commit script to .git/hooks that checkes. README.md, gitignore and doxygenfiles. Also format code with astyle tool
+Run 1-configure-pre-Cinema.bat file to copy 1-pre-Cinema script to .git/hooks that checkes. README.md, gitignore and doxygenfiles. Also format code with astyle tool
 
 ### Step-2 (Run on Windows, Can Effect on WSL)
 
@@ -140,7 +140,7 @@ We have already configured script for build operations. `7-build-app-windows.bat
 
 ### Build App on WSL/Linux
 
-We are running WSL on Windows 10 and solve our virtual machine problem. We make cross-platform development. After development before commit we run and test app on Windows and WSL with this scripts. To run on WSL you need to install WSL first. 
+We are running WSL on Windows 10 and solve our virtual machine problem. We make cross-platform development. After development before Cinema we run and test app on Windows and WSL with this scripts. To run on WSL you need to install WSL first. 
 
 you can use our public notes
 

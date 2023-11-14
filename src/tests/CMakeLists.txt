@@ -38,7 +38,7 @@ if(ENABLE_UTILITY)
 endif()
 
 # Calculator tests
-if(ENABLE_CALCULATOR)
-	add_subdirectory(calculator)
+if(ENABLE_CINEMA)
+	add_subdirectory(cinema)
 endif()
 

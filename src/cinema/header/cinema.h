@@ -1,11 +1,11 @@
 /**
- * @file calculator.h
+ * @file cinema.h
  * 
  * @brief Provides functions for math. utilities
  */
 
-#ifndef CALCULATOR_H
-#define CALCULATOR_H
+#ifndef CINEMA_H
+#define CINEMA_H
 
 #include "../../utility/header/commonTypes.h"
 
@@ -59,4 +59,4 @@ namespace Coruh
     }
 }
 
-#endif // CALCULATOR_H
+#endif // CINEMA_H
