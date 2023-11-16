@@ -1,23 +1,21 @@
 #include "../header/cinema.h"
 #include <stdexcept>
+#include <iostream>
+#include <stack>
+#include <string>
+#include <sstream>
 
 using namespace Coruh::Calculator;
+using namespace std;
 
-double Calculator::add(double a, double b) {
-    return a + b;
-}
+int screenmenu() {
+	cout << "\n====== Cinema Ticketing and Screening Management ======\n";
+	cout << "1. Movie Management\n";
+	cout << "2. Session Planning\n";
+	cout << "3. Auditorium and Seating Arrangements\n";
+	cout << "4. Reporting\n";
+	cout << "5. Integrations\n";
+	cout << "0. Exit to Program\n";
 
-double Calculator::subtract(double a, double b) {
-    return a - b;
-}
-
-double Calculator::multiply(double a, double b) {
-    return a * b;
-}
-
-double Calculator::divide(double a, double b) {
-    if (b == 0) {
-        throw std::invalid_argument("Division by zero is not allowed.");
-    }
-    return a / b;
+	return 0; // An int value can be extended here, but this makes no functional sense
 }
