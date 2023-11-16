@@ -19,8 +19,9 @@
 using namespace Coruh::Calculator;
 using namespace std;
 int main() {
-	int loadMoviesFromFile();
-	
+
+    loadMoviesFromFile();
+	loadSessions();
 
 	
 
@@ -156,7 +157,7 @@ int main() {
 			case 3:
 				cout << "\n=== Session Creation ===\n";
 				createSession();
-
+				saveSessions();
 
 				break;
 

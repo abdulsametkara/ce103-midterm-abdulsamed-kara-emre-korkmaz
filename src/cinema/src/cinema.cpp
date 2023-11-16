@@ -259,3 +259,53 @@ int listSessions() {
         return 0; // Başarılı durumda 0 döndürülebilir
     }
 }
+
+int saveSessions() {
+    ofstream file("sessions.txt"); // Seans bilgilerini kaydedeceğiniz dosya
+    if (file.is_open()) {
+        if (sessionCount == 0) {
+            cout << "No sessions available to save.\n";
+            file.close();
+            return 1; // Oturum yoksa 1 döndürülebilir
+        }
+
+        for (int i = 0; i < sessionCount; ++i) {
+            file << sessionList[i].movieTitle << endl;
+            file << sessionList[i].time << endl;
+            file << sessionList[i].availableSeats << endl;
+            file << sessionList[i].reservedSeats << endl;
+            file << sessionList[i].isSpecialScreening << endl;
+        }
+        file.close();
+        return 0; // Başarılı durumda 0 döndürülebilir
+    }
+    else {
+        cout << "Unable to open the file for saving sessions.\n";
+        return 1; // Dosya açılamadıysa 1 döndürülebilir
+    }
+}
+
+int loadSessions() {
+    ifstream file("sessions.txt");
+    if (file.is_open()) {
+        int sessionCount = 0; // Oturum sayacı
+
+        Session session;
+        while (sessionCount < MAX_SESSIONS &&
+            getline(file, session.movieTitle)) {
+            getline(file, session.time);
+            file >> session.availableSeats;
+            file >> session.reservedSeats;
+            file >> session.isSpecialScreening;
+            file.ignore();
+
+            sessionList[sessionCount++] = session;
+        }
+        file.close();
+        return 0; // Başarılı durumda 0 döndürülebilir
+    }
+    else {
+        cout << "No existing sessions file found.\n";
+        return 1; // Oturumlar yüklenemediyse 1 döndürülebilir
+    }
+}
