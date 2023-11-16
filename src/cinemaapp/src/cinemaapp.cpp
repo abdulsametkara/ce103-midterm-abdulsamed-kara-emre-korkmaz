@@ -83,8 +83,8 @@ int main() {
 
 			case 4:
 				cout << "\n=== Categorize Genre ===\n";
-				
 
+				 categorizeGenre();
 
 				break;
 				// open to Rate Movie menu
@@ -164,6 +164,7 @@ int main() {
 
 			case 4:
 				cout << "\n=== Delete Session ===\n";
+				deleteSession();
 				
 
 				break;

@@ -309,3 +309,68 @@ int loadSessions() {
         return 1; // Oturumlar yüklenemediyse 1 döndürülebilir
     }
 }
+
+int deleteSession() {
+    // If the sessionlist is empty, there is no film and nothing to delete.
+    if (sessionCount == 0) {
+        cout << "Session list is empty. Nothing to delete.\n";
+        return 1; // Return 1 for failure
+    }
+
+    // Get the session to be deleted from the user.
+    string titleToDelete;
+    cout << "Enter the title of the film for the session you want to delete: ";
+    cin >> titleToDelete;
+
+    // Find the session to delete in the sessionList.
+    int i;
+    for (i = 0; i < sessionCount; ++i) {
+        if (sessionList[i].movieTitle == titleToDelete) {
+            break; // Exit the loop when session is found.
+        }
+    }
+
+    // If the session is found, delete it from the sessionList.
+    if (i < sessionCount) {
+        // Shift elements to delete the session
+        for (int j = i; j < sessionCount - 1; ++j) {
+            sessionList[j] = sessionList[j + 1];
+        }
+        sessionCount--;
+
+        cout << "Session deleted successfully!\n";
+
+        saveSessions(); // Save sessions to file after deletion
+
+        return 0; // Return 0 for success
+    }
+    else {
+        // Print an error message to the screen if the film was not found.
+        cout << "Session not found.\n";
+        return 1; // Return 1 for failure
+    }
+}
+
+
+int categorizeGenre() {
+    string type;
+    cout << "Please enter the movie type: ";
+    cin.ignore();
+    getline(cin, type);
+
+    bool movieFound = false;
+
+    for (const auto& movie : movieList) {
+        if (movie.genre == type) {
+            movieFound = true;
+            cout << "Movie: " << movie.title << endl << "Type: " << movie.genre << endl << endl;
+        }
+    }
+
+    if (!movieFound) {
+        cout << "Movie type not found.\n";
+        return 1; // Return 1 for failure
+    }
+
+    return 0; // Return 0 for success
+}

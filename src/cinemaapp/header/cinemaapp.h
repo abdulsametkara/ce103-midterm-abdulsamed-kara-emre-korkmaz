@@ -18,5 +18,7 @@ int listSessions();
 int createSession();
 int saveSessions();
 int loadSessions();
+int deleteSession();
+int categorizeGenre();
 
 #endif // CINEMA_APP_H
