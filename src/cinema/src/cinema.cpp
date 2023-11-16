@@ -412,3 +412,95 @@ int createCleaningSchedule() {
 
     return 0; // Return 0 for success, assuming the function just displays the cleaning schedule
 }
+
+
+int sellTicket() {
+    if (sessionCount == 0) {
+        cout << "No sessions available for ticket sale.\n";
+        return 1; // Return 1 for failure
+    }
+
+    string movieTitle;
+    cout << "Enter the movie title for which you want to buy tickets: ";
+    cin.ignore();
+    getline(cin, movieTitle);
+
+    bool sessionFound = false;
+    int selectedSessionIndex = -1;
+
+    for (int i = 0; i < sessionCount; ++i) {
+        if (sessionList[i].movieTitle == movieTitle) {
+            sessionFound = true;
+            selectedSessionIndex = i;
+            break;
+        }
+    }
+
+    if (!sessionFound || selectedSessionIndex == -1) {
+        cout << "No session found for the entered movie title.\n";
+        return 1; // Return 1 for failure
+    }
+
+    int numberOfTickets;
+    cout << "Enter the number of tickets to buy: ";
+    cin >> numberOfTickets;
+
+    if (numberOfTickets > sessionList[selectedSessionIndex].availableSeats) {
+        cout << "Not enough available seats for this session.\n";
+        return 1; // Return 1 for failure
+    }
+
+    sessionList[selectedSessionIndex].availableSeats -= numberOfTickets;
+    sessionList[selectedSessionIndex].reservedSeats += numberOfTickets;
+
+    cout << "Tickets sold successfully!\n";
+    saveSessions(); // Save session changes after selling tickets
+
+    return 0; // Return 0 for success
+}
+
+
+// Function to make a reservation for a movie session
+int makeReservation() {
+    if (sessionCount == 0) {
+        cout << "No sessions available for reservation.\n";
+        return 1; // Return 1 for failure
+    }
+
+    string movieTitle;
+    cout << "Enter the movie title for which you want to make a reservation: ";
+    cin.ignore();
+    getline(cin, movieTitle);
+
+    bool sessionFound = false;
+    int selectedSessionIndex = -1;
+
+    for (int i = 0; i < sessionCount; ++i) {
+        if (sessionList[i].movieTitle == movieTitle) {
+            sessionFound = true;
+            selectedSessionIndex = i;
+            break;
+        }
+    }
+
+    if (!sessionFound || selectedSessionIndex == -1) {
+        cout << "No session found for the entered movie title.\n";
+        return 1; // Return 1 for failure
+    }
+
+    int numberOfSeats;
+    cout << "Enter the number of seats to reserve: ";
+    cin >> numberOfSeats;
+
+    if (numberOfSeats > sessionList[selectedSessionIndex].availableSeats) {
+        cout << "Not enough available seats for this session.\n";
+        return 1; // Return 1 for failure
+    }
+
+    sessionList[selectedSessionIndex].availableSeats -= numberOfSeats;
+    sessionList[selectedSessionIndex].reservedSeats += numberOfSeats;
+
+    cout << "Reservation made successfully!\n";
+
+    return 0; // Return 0 for success
+}

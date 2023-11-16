@@ -144,12 +144,15 @@ int main() {
 				// open to Sell Ticket 
 			case 1:
 				cout << "\n=== Sell Ticket ===\n";
-
+				sellTicket();
+				
 				break;
 
 				// open to Make a Reservatin menu
 			case 2:
 				cout << "\n=== Make a Reservation ===\n";
+				
+				makeReservation();
 
 				break;
 

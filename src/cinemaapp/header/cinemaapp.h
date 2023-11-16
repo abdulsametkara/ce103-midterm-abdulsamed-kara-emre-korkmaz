@@ -23,6 +23,8 @@ int categorizeGenre();
 int rateMovie();
 int reviewMovie();
 int createCleaningSchedule();
+int sellTicket();
+int makeReservation();
 
 
 #endif // CINEMA_APP_H
