@@ -75,8 +75,8 @@ int main() {
 
 			case 3:
 				cout << "\n=== Delete Movie ===\n";
-				
-
+				deleteMovie();
+				saveMovies();
 				break;
 				// open to Categorize Genre menu
 
@@ -101,7 +101,7 @@ int main() {
 
 			case 7:
 				cout << "\n=== List Movie ===\n";
-				
+				listMovies();
 
 				break;
 

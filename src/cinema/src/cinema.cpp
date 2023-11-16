@@ -153,3 +153,59 @@ int loadMoviesFromFile() {
         return 1;
     }
 }
+
+// Function to list movies
+int listMovies() {
+    if (movieCount == 0) {
+        cout << "Movie list is empty.\n";
+        return 1;
+    }
+
+    cout << "Movie List:\n";
+    for (int i = 0; i < movieCount; ++i) {
+        cout << "Title: " << movieList[i].title << endl;
+        cout << "Genre: " << movieList[i].genre << endl;
+        cout << "Rating: " << movieList[i].rating << endl;
+        cout << "Review: " << movieList[i].review << endl << endl;
+        cout << "======================\n";
+    }
+
+    return 0;
+}
+
+// Function to delete a movie
+int deleteMovie() {
+    if (movieCount == 0) {
+        cout << "Movie list is empty. No movies to delete.\n";
+        return 1;
+    }
+
+    string deleteTitle;
+    cout << "Enter the title of the movie you want to delete: ";
+    cin.ignore();
+    getline(cin, deleteTitle);
+
+    bool movieFound = false;
+    for (int i = 0; i < movieCount; ++i) {
+        if (movieList[i].title == deleteTitle) {
+            // Found the movie to delete from the list
+            for (int j = i; j < movieCount - 1; ++j) {
+                movieList[j] = movieList[j + 1];
+            }
+            movieCount--;
+
+            cout << "Movie deleted successfully!\n";
+            movieFound = true;
+            break;
+        }
+    }
+
+    if (!movieFound) {
+        cout << "Movie not found.\n";
+        return 1;
+    }
+
+    saveMovies(); // Save changes to file
+    return 0;
+}
+

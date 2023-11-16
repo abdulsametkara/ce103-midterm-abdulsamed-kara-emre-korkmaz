@@ -12,5 +12,8 @@ int addMovie();
 int saveMovies();
 int loadMoviesFromFile();
 int updateMovie();
+int deleteMovie();
+int listMovies();
+
 
 #endif // CINEMA_APP_H
