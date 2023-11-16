@@ -8,5 +8,7 @@
 #define CINEMA_APP_H
 
 int screenmenu();
+int addMovie();
+int saveMovies();
 
 #endif // CINEMA_APP_H

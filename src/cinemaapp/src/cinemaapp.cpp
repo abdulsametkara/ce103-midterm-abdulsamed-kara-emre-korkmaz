@@ -56,7 +56,8 @@ int main() {
 				// open to Add movie menu
 			case 1:
 				cout << "\n=== Add Movie ===\n";
-				
+				addMovie();
+				saveMovies();
 
 				break;
 				// open to Update Movie menu

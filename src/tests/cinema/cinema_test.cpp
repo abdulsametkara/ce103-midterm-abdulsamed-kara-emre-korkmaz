@@ -16,29 +16,6 @@ protected:
 	}
 };
 
-TEST_F(CalculatorTest, TestAdd) {
-	double result = Calculator::add(5.0, 3.0);
-	EXPECT_DOUBLE_EQ(result, 8.0);
-}
-
-TEST_F(CalculatorTest, TestSubtract) {
-	double result = Calculator::subtract(5.0, 3.0);
-	EXPECT_DOUBLE_EQ(result, 2.0);
-}
-
-TEST_F(CalculatorTest, TestMultiply) {
-	double result = Calculator::multiply(5.0, 3.0);
-	EXPECT_DOUBLE_EQ(result, 15.0);
-}
-
-TEST_F(CalculatorTest, TestDivide) {
-	double result = Calculator::divide(6.0, 3.0);
-	EXPECT_DOUBLE_EQ(result, 2.0);
-}
-
-TEST_F(CalculatorTest, TestDivideByZero) {
-	EXPECT_THROW(Calculator::divide(5.0, 0.0), std::invalid_argument);
-}
 
 /**
  * @brief The main function of the test program.
