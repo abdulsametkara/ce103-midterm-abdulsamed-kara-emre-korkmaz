@@ -10,5 +10,7 @@
 int screenmenu();
 int addMovie();
 int saveMovies();
+int loadMoviesFromFile();
+int updateMovie();
 
 #endif // CINEMA_APP_H

@@ -19,6 +19,8 @@
 using namespace Coruh::Calculator;
 using namespace std;
 int main() {
+	int loadMoviesFromFile();
+	
 
 	
 
@@ -65,6 +67,9 @@ int main() {
 			case 2:
 				cout << "\n === Update Movie ===\n";
 				
+				 updateMovie();
+				 saveMovies();
+
 				break;
 				// open to Delete Movie menu
 

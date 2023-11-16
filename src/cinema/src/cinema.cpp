@@ -69,6 +69,7 @@ int addMovie() {
 	return 0;
 }
 
+
 // Function to save movies to file
 int saveMovies() {
 	ofstream file("movies.txt");
@@ -86,4 +87,69 @@ int saveMovies() {
 		cout << "Unable to open the file for saving.\n";
 		return 1;
 	}
+}
+
+
+int updateMovie() {
+    if (movieCount == 0) {
+        cout << "Movie list is empty. No movies to update.\n";
+        return 1;
+    }
+
+    string updateTitle;
+    cout << "Enter the title of the movie you want to update: ";
+    cin.ignore();
+    getline(cin, updateTitle);
+
+    bool movieFound = false;
+    for (int i = 0; i < movieCount; ++i) {
+        if (movieList[i].title == updateTitle) {
+            // Update movie details
+            cout << "Enter the updated movie title: ";
+            getline(cin, movieList[i].title);
+            cout << "Enter the updated movie genre: ";
+            getline(cin, movieList[i].genre);
+            cout << "Enter the updated movie rating: ";
+            cin >> movieList[i].rating;
+            cin.ignore();
+            cout << "Enter the updated movie review: ";
+            getline(cin, movieList[i].review);
+
+            cout << "Movie updated successfully!\n";
+            movieFound = true;
+            break;
+        }
+    }
+
+    if (!movieFound) {
+        cout << "Movie not found.\n";
+        return 1;
+    }
+
+    saveMovies(); // Save changes to file
+    return 0;
+}
+
+
+
+// Function to load movies from a file
+int loadMoviesFromFile() {
+    ifstream file("movies.txt");
+    if (file.is_open()) {
+        Movie movie;
+        while (getline(file, movie.title)) {
+            getline(file, movie.genre);
+            file >> movie.rating;
+            file.ignore();
+            getline(file, movie.review);
+
+            movieList[movieCount++] = movie; // Add loaded movie to the movie list
+        }
+        file.close();
+        return 0;
+    }
+    else {
+        cout << "Unable to open the file.\n";
+        return 1;
+    }
 }
