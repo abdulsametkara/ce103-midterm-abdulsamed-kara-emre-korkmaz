@@ -25,6 +25,7 @@ int reviewMovie();
 int createCleaningSchedule();
 int sellTicket();
 int makeReservation();
-
+int scheduleSpecialScreening();
+int generateSeasonalTrendsReport();
 
 #endif // CINEMA_APP_H

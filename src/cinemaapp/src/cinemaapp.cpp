@@ -183,7 +183,7 @@ int main() {
 			case 6:
 				cout << "\n ==== Schedule Special Screening ====\n";
 
-
+				scheduleSpecialScreening();
 				break;
 
 
@@ -275,13 +275,13 @@ int main() {
 				// open to Generate Popular Movies Report menu
 			case 2:
 				cout << "\n=== Generate Popular Movies Report ===\n";
-
+				
 				break;
 
 				// open to Generate Seasonal Trends Report menu
 			case 3:
 				cout << "\n=== Generate Seasonal Trends Report ===\n";
-				
+				generateSeasonalTrendsReport();
 
 				break;
 

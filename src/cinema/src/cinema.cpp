@@ -504,3 +504,65 @@ int makeReservation() {
 
     return 0; // Return 0 for success
 }
+
+// Function to schedule a special screening for a movie session
+int scheduleSpecialScreening() {
+    if (sessionCount == 0) {
+        cout << "No sessions available for scheduling a special screening.\n";
+        return 1; // Return 1 for failure
+    }
+
+    string movieTitle;
+    cout << "Enter the movie title for which you want to schedule a special screening: ";
+    cin.ignore();
+    getline(cin, movieTitle);
+
+    bool sessionFound = false;
+    int selectedSessionIndex = -1;
+
+    for (int i = 0; i < sessionCount; ++i) {
+        if (sessionList[i].movieTitle == movieTitle) {
+            sessionFound = true;
+            selectedSessionIndex = i;
+            break;
+        }
+    }
+
+    if (!sessionFound || selectedSessionIndex == -1) {
+        cout << "No session found for the entered movie title.\n";
+        return 1; // Return 1 for failure
+    }
+
+    // Check if it's already a special screening
+    if (sessionList[selectedSessionIndex].isSpecialScreening) {
+        cout << "This session is already scheduled as a special screening.\n";
+        return 1; // Return 1 for failure
+    }
+
+    // Set this session as a special screening
+    sessionList[selectedSessionIndex].isSpecialScreening = true;
+
+    cout << "Special screening scheduled successfully!\n";
+    saveSessions(); // Save session changes after scheduling a special screening
+
+    return 0; // Return 0 for success
+}
+
+int generateSeasonalTrendsReport() {
+    double point1, point2, point3;
+    string date1, date2, date3;
+    date1 = "2023-01-01";
+    date2 = "2023-02-01";
+    date3 = "2023-03-01";
+    point1 = 100.0;
+    point2 = 120.0;
+    point3 = 80.0;
+    cout << "Generate Seasonal Trends Report:\n";
+    cout << "This score is " << point1 << " on " << date1 << endl;
+    cout << "This score is " << point2 << " on " << date2 << endl;
+    cout << "This score is " << point3 << " on " << date3 << endl;
+
+    return 0;
+
+
+}
