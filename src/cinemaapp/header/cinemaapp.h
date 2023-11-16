@@ -29,5 +29,6 @@ int scheduleSpecialScreening();
 int generateSeasonalTrendsReport();
 int generateFilmsTrendsReport();
 int seatMaintenance();
+int accessibilityFeatures();
 
 #endif // CINEMA_APP_H

@@ -593,3 +593,57 @@ int seatMaintenance() {
 
     return 0; // Başarılı durumda 0 döndürülebilir
 }
+
+int accessibilityFeatures() {
+    int choice;
+
+    cout << "\n=== Accessibility Features ===\n";
+    cout << "1. Wheelchair Access\n";
+    cout << "2. Audio Description\n";
+    cout << "3. Subtitling\n";
+    cout << "4. Hearing Loop\n";
+    cout << "5. Exit\n";
+    cout << "Enter your choice [1-5]: ";
+
+    cin >> choice;
+
+    system("cls");
+
+    switch (choice) {
+    case 1:
+        cout << "Wheelchair access is available." << endl << endl;
+        cout << "Wide doors and ramps are available for wheelchair access." << endl;
+
+
+        break;
+
+    case 2:
+        cout << "Audio description service is available." << endl << endl;
+        cout << "Films for the hearing impaired have an audio description feature." << endl;
+
+        break;
+
+    case 3:
+        cout << "Subtitling service is available." << endl << endl;
+        cout << "Turkish subtitle option is offered for foreign films." << endl;
+
+        break;
+
+    case 4:
+        cout << "Hearing loop system is available." << endl << endl;
+        cout << "Salon içerisinde işitme engellilere yönelik yardımcı döngü sistemi bulunmaktadır." << endl;
+
+        break;
+
+    case 0:
+        cout << "Exiting accessibility features." << endl;
+
+        break;
+
+    default:
+        cout << "Invalid choice. Please enter a valid option." << endl;
+        break;
+    }
+
+    return 0;
+}

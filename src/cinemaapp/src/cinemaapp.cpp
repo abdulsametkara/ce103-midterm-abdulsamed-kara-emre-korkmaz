@@ -235,6 +235,7 @@ int main() {
 				// open to Accessibility Features menu 
 			case 3:
 				cout << "\n=== Accessibility Features ===\n";
+				accessibilityFeatures();
 
 				break;
 
