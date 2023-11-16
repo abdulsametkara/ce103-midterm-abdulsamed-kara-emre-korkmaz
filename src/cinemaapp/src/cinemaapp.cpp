@@ -155,7 +155,8 @@ int main() {
 				// open to Schedule Special Sreening 
 			case 3:
 				cout << "\n=== Session Creation ===\n";
-				
+				createSession();
+
 
 				break;
 
@@ -169,7 +170,7 @@ int main() {
 
 			case 5:
 				cout << "\n ==== View Sessions ====\n";
-				
+				listSessions();
 
 				break;
 

@@ -1,4 +1,4 @@
-#include "../header/cinema.h"
+﻿#include "../header/cinema.h"
 #include <stdexcept>
 #include <iostream>
 #include <stack>
@@ -7,7 +7,7 @@
 #include <fstream>
 #include <cstdlib>
 
-#define MAX_SESSIONS 100 // Maksimum oturum say�s�
+#define MAX_SESSIONS 100 // Maksimum oturum sayýsý
 
 
 using namespace Coruh::Calculator;
@@ -209,3 +209,53 @@ int deleteMovie() {
     return 0;
 }
 
+
+int createSession() {
+    Session newSession;
+
+    cin.ignore();
+    cout << "Enter movie title: ";
+    getline(cin, newSession.movieTitle);
+
+    cout << "Enter screening time: ";
+    getline(cin, newSession.time);
+
+    cout << "Enter available seats: ";
+    cin >> newSession.availableSeats;
+
+    cout << "Is this a special screening? (1 for yes, 0 for no): ";
+    cin >> newSession.isSpecialScreening;
+
+    newSession.reservedSeats = 0;
+
+    if (sessionCount < 100) {
+        sessionList[sessionCount++] = newSession;
+        cout << "Session created successfully!\n";
+    }
+    else {
+        cout << "Impression creation limit reached.\n";
+    }
+
+    return 0;
+}
+
+
+
+int listSessions() {
+    if (sessionCount == 0) {
+        cout << "No sessions available.\n";
+        return 1; // Hata durumunda 1 döndürülebilir
+    }
+    else {
+        cout << "Sessions:\n";
+        for (int i = 0; i < sessionCount; ++i) {
+            cout << "Title Of The Movie: " << sessionList[i].movieTitle << endl;
+            cout << "Time: " << sessionList[i].time << endl;
+            cout << "Available Seats: " << sessionList[i].availableSeats << endl;
+            cout << "Reserved Seats: " << sessionList[i].reservedSeats << endl;
+            cout << "Is Special Screening: " << (sessionList[i].isSpecialScreening ? "Yes" : "No") << endl;
+            cout << "======================\n";
+        }
+        return 0; // Başarılı durumda 0 döndürülebilir
+    }
+}

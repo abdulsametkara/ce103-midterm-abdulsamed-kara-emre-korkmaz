@@ -14,6 +14,8 @@ int loadMoviesFromFile();
 int updateMovie();
 int deleteMovie();
 int listMovies();
+int listSessions();
+int createSession();
 
 
 #endif // CINEMA_APP_H
