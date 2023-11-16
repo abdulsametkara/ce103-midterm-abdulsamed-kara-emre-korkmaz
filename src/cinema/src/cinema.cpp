@@ -566,3 +566,30 @@ int generateSeasonalTrendsReport() {
 
 
 }
+
+int generateFilmsTrendsReport() {
+    printf("1.Interstaller\n");
+    printf("2.Inception\n");
+    printf("3.The Prestige\n");
+    printf("4.Titanic\n");
+    printf("5.Avatar\n");
+
+    return 0;
+}
+
+
+int seatMaintenance() {
+    int seatNumber;
+
+    cout << "Enter the seat number to perform maintenance: ";
+    cin >> seatNumber;
+
+    // Burada koltuk numarasına göre bakım veya onarım işlemleri gerçekleştirilebilir
+    // Örneğin:
+    // Eğer seatNumber belirli bir koltuk numarasına denk geliyorsa, o koltuğun durumu gösterilebilir veya bakım yapılabilir.
+
+    // Örnek bir işlem:
+    cout << "Maintenance completed for seat number " << seatNumber << ". Seat is in good condition.\n";
+
+    return 0; // Başarılı durumda 0 döndürülebilir
+}

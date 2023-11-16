@@ -227,6 +227,8 @@ int main() {
 			case 2:
 				cout << "\n=== Seat Maintenance ===\n";
 				
+				 seatMaintenance();
+
 
 				break;
 
@@ -275,6 +277,8 @@ int main() {
 				// open to Generate Popular Movies Report menu
 			case 2:
 				cout << "\n=== Generate Popular Movies Report ===\n";
+				 
+				generateFilmsTrendsReport();
 				
 				break;
 
