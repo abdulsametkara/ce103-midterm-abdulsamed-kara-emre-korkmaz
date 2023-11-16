@@ -30,5 +30,5 @@ int generateSeasonalTrendsReport();
 int generateFilmsTrendsReport();
 int seatMaintenance();
 int accessibilityFeatures();
-
+int generateBoxOfficeCollections();
 #endif // CINEMA_APP_H

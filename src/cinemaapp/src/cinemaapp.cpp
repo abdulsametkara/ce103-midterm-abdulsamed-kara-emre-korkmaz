@@ -272,6 +272,7 @@ int main() {
 			case 1:
 				cout << "\n=== Generate Box Office Collections ===\n";
 				
+				generateBoxOfficeCollections();
 
 				break;
 

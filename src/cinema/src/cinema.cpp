@@ -647,3 +647,19 @@ int accessibilityFeatures() {
 
     return 0;
 }
+
+int generateBoxOfficeCollections() {
+    // Burada box office koleksiyonları için gerekli verileri işleyebilirsiniz.
+    // Örneğin:
+    double totalRevenue = 350000.0; // Toplam gelir
+    double expenses = 150000.0; // Harcamalar
+    double netProfit = totalRevenue - expenses; // Net kar
+
+    // Box office koleksiyonlarını raporlama
+    cout << "\n=== Box Office Collections ===\n";
+    cout << "Total Revenue: $" << totalRevenue << endl;
+    cout << "Expenses: $" << expenses << endl;
+    cout << "Net Profit: $" << netProfit << endl;
+
+    return 0;
+}
