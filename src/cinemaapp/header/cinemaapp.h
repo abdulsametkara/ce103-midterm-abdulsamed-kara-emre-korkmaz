@@ -20,5 +20,9 @@ int saveSessions();
 int loadSessions();
 int deleteSession();
 int categorizeGenre();
+int rateMovie();
+int reviewMovie();
+int createCleaningSchedule();
+
 
 #endif // CINEMA_APP_H

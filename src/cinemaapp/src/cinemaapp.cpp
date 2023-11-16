@@ -91,13 +91,13 @@ int main() {
 
 			case 5:
 				cout << "\n=== Rate Movie ===\n";
-
+				rateMovie();
 				break;
 				// open to Review Movie menu
 
 			case 6:
 				cout << "\n=== Review Movie ===\n";
-
+				reviewMovie();
 				break;
 
 			case 7:
@@ -215,7 +215,8 @@ int main() {
 
 			case 1:
 				cout << "\n=== Create Cleaning Schedule ===\n";
-				
+				createCleaningSchedule();
+
 				break;
 
 				// open to Seat Maintenance menu

@@ -374,3 +374,41 @@ int categorizeGenre() {
 
     return 0; // Return 0 for success
 }
+
+int rateMovie() {
+    for (const auto& movie : movieList) {
+        cout << "Movie: " << movie.title << endl << "Rating: " << movie.rating << endl << endl;
+    }
+
+    return 0; // Return 0 for success, assuming the function just displays the movies and ratings
+}
+
+int reviewMovie() {
+    for (const auto& movie : movieList) {
+        cout << "Movie: " << movie.title << endl << "Review: " << movie.review << endl << endl;
+    }
+
+    return 0; // Return 0 for success, assuming the function just displays the movie reviews
+}
+
+int createCleaningSchedule() {
+    string days[] = {
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    };
+
+    string tasks[] = {
+        "cleaning between movies",
+        "nothing today",
+        "main cleaning washing of seats",
+        "corridor and toilet cleaning",
+        "wiping all places and all areas",
+        "nothing today",
+        "General cleaning of all halls after the movie"
+    };
+
+    for (size_t i = 0; i < 7; ++i) {
+        cout << "Day: " << days[i] << endl << "Task: " << tasks[i] << endl << endl;
+    }
+
+    return 0; // Return 0 for success, assuming the function just displays the cleaning schedule
+}
