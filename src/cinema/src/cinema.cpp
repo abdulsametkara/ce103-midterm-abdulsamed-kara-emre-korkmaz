@@ -15,6 +15,7 @@ using namespace std;
 
 // Movie struct for representing movie information
 struct Movie {
+
 	string title;
 	string genre;
 	int rating;
@@ -39,6 +40,7 @@ int sessionCount = 0;
 
 
 int screenmenu() {
+
 	cout << "\n====== Cinema Ticketing and Screening Management ======\n";
 	cout << "1. Movie Management\n";
 	cout << "2. Session Planning\n";
@@ -591,7 +593,7 @@ int seatMaintenance() {
     // Örnek bir işlem:
     cout << "Maintenance completed for seat number " << seatNumber << ". Seat is in good condition.\n";
 
-    return 0; // Başarılı durumda 0 döndürülebilir
+    return seatNumber; // Başarılı durumda 0 döndürülebilir
 }
 
 int accessibilityFeatures() {
